@@ -1,0 +1,121 @@
+Fundamentos de la alineación
+Exploremos cómo alinear texto y elementos HTML utilizando CSS.
+
+Centrémonos primero en la alineación horizontal. La alineación vertical es más difícil, así que la explorará más adelante.
+
+Alineación del texto
+
+Alinear el texto dentro de un elemento HTML es muy sencillo. Para ello, se utiliza la propiedad CSS text-align.
+En el siguiente ejemplo, la regla CSS establece que el texto de todos los elementos de párrafo esté alineado al centro.
+
+p{
+    text-align: center;
+}
+
+La alineación del texto puede establecerse a la izquierda, derecha, centro y justificada.
+
+La alineación de justificada extiende el texto para que cada línea del mismo tenga el mismo ancho.
+
+La alineación por defecto es izquierda para los idiomas que son de izquierda a derecha como el inglés.
+ Para las lenguas de derecha a izquierda, como el árabe, la alineación por defecto es derecha.
+
+Alineación de elementos HTML
+
+La alineación de los elementos HTML es más complicada que la del texto. 
+Para alinear los elementos HTML, debes tener en cuenta el modelo de caja y el flujo del documento de las lecciones anteriores.
+ La alineación de un elemento HTML se realiza cambiando las propiedades de su modelo de caja y cómo afecta al flujo del documento.
+
+Alineación central de elementos HTML
+
+Para centrar un elemento, se establece un ancho en el elemento y se empujan sus márgenes
+hacia fuera para llenar el espacio disponible restante del elemento padre, como en la siguiente estructura HTML:
+
+<div class="parent">
+<div class="child"></div>
+</div>
+
+En su CSS, establecerá que el elemento padre tenga un borde rojo para visualizar el espacio que ocupa:
+
+.parent{
+    border: 4px solid red;
+}
+
+
+El elemento hijo tendrá un ancho igual al 50% del elemento padre con un relleno de 20 píxeles.
+Tenga en cuenta que el relleno: 20px es la abreviatura que corresponde a establecer el relleno superior, inferior, izquierdo y derecho a 20px.
+Para visualizar el espacio que ocupa, ponga el borde en verde:
+
+.child {
+  width: 50%;
+  padding: 20px;
+  border: 4px solid green;
+}
+
+Para alinear el elemento al centro, establezca su propiedad de margen en auto. 
+La propiedad auto le dirá al navegador que calcule el margen automáticamente basándose en el espacio disponible.
+
+.child {
+  width: 50%;
+  padding: 20px;
+  border: 4px solid green;
+  margin: auto;
+}
+
+El resultado es que el elemento hijo está centrado dentro del elemento padre:
+
+Es importante señalar que esto funciona porque el elemento div es un elemento a nivel de bloque.  
+
+Si desea alinear un elemento en línea como img, tendrá que cambiarlo por un elemento a nivel de bloque.
+Al igual que en el ejemplo del div, se añade el img a un elemento padre:
+
+<div class="parent">
+  <img src="photo.png" class="child">
+</div>
+
+
+La regla CSS cambia entonces el elemento img a un elemento de nivel de bloque y establece su margen en auto:
+
+.child {
+  display: block;
+  width: 50%;
+  margin: auto;
+}
+
+Para ser más precisos, en CSS solo se pueden establecer los márgenes izquierdo y derecho en automático.
+Esto le permite establecer los márgenes superior e inferior a valores específicos si es necesario.
+
+.child {
+  display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+Alineación izquierda/derecha de elementos HTML
+
+Las dos formas más comunes de alinear los elementos a la izquierda y a la derecha son utilizar la propiedad float y la propiedad position.
+
+La propiedad position tiene varias opciones de valor que influyen en cómo se muestra el elemento en el flujo del documento.
+ Más adelante explorará cómo utilizar la propiedad position. Por ahora, vamos a centrarnos en la propiedad float.
+
+La propiedad float establece la posición de un elemento en relación con el contenido del texto dentro de un elemento padre.
+ El texto rodeará el elemento.
+
+En el siguiente ejemplo, la imagen se alineará a la derecha del elemento div. El contenido del texto rodeará la imagen:
+
+HTML
+
+<div class="parent">
+  <img src="photo.png" class="child"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Curabitur eu odio eget leo auctor porta sit amet sit amet justo. Donec fermentum quam in diam volutpat, at lacinia diam placerat.
+  Aenean quis feugiat sem. 
+  Suspendisse a dui massa. Phasellus scelerisque, mi vestibulum iaculis tristique, orci tellus gravida nisi, in pellentesque elit massa ut lorem. 
+  Sed elementum ornare nunc vel cursus. Duis sed enim in nulla efficitur convallis sed eget dolor. Curabitur scelerisque eros erat, in vulputate dolor consequat vel. Praesent ac sapien condimentum, ultricies libero at, auctor orci. Curabitur ut augue ac massa convallis faucibus sed in magna. Phasellus scelerisque auctor est a auctor. Nam laoreet sem sapien, porta imperdiet urna laoreet eu.
+  Morbi dolor turpis, congue id bibendum eget, viverra et risus. Quisque vitae erat id tortor ullamcorper maximus.
+</div>
+
+CSS 
+
+.child{
+    float: right;
+}
