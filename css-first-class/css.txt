@@ -1,0 +1,157 @@
+Diferentes tipos de selectores
+A la hora de diseñar una página web, hay muchos tipos de selectores disponibles que permiten 
+a los desarrolladores ser tan amplios o tan específicos como necesiten al momento de seleccionar los elementos HTML a los que aplicar las reglas CSS.
+
+Aquí aprenderá algunos de los selectores CSS más comunes que usará como desarrollador.
+
+Selectores de elementos
+El selector de elementos permite a los desarrolladores seleccionar elementos HTML en función de su tipo de elemento.
+
+Por ejemplo, si utiliza p como selector, la regla se aplicará a todos los elementos p de la página web.
+
+HTML
+
+<p>Once upon a time...</p>
+<p>In a hidden land...</p>
+
+CSS
+
+p { 
+  color: blue; 
+}
+
+Selectores de ID
+El selector ID utiliza el atributo id de un elemento HTML. 
+Dado que el id es único dentro de una página web, permite al desarrollador seleccionar un elemento específico para su estilización. 
+Los selectores de ID llevan como prefijo el carácter #.
+
+HTML
+
+<span id="latest">New!</span>
+
+CSS
+
+#latest { 
+  background-color: purple; 
+}
+
+Seleccionadores de clase
+Los elementos también pueden seleccionarse en función del atributo de clase que se les aplique. La regla CSS se ha aplicado a todos los elementos con el nombre de clase especificado. El selector de clase va precedido de un carácter . 
+
+En el siguiente ejemplo, la regla CSS se aplica a ambos elementos, ya que tienen la clase CSS de navegación aplicada.
+
+HTML
+
+<a class="navigation">Go Back</a>
+<p class="navigation">Go Forward</p>
+
+CSS 
+
+.navigation { 
+  margin: 2px;
+}
+
+Elemento con selector de clase
+Un método más específico para seleccionar elementos HTML es seleccionar primero el elemento HTML y luego la clase o ID CSS.
+
+El ejemplo siguiente selecciona todos los elementos p que tienen aplicada la clase CSS introducción.
+
+HTML
+
+<p class="introduction"></a>
+
+CSS 
+
+p.introduction { 
+  margin: 2px;
+}
+
+Seleccionadores de descendientes
+Los selectores descendientes son útiles si necesita seleccionar elementos HTML que están contenidos en otro selector.
+
+Veamos un ejemplo.
+
+Tiene la siguiente estructura HTML y regla CSS.
+
+HTML
+
+<div id="blog">
+  <h1>Latest News</h1>
+  <div>
+    <h1>Today's Weather</h1>
+    <p>The weather will be sunny</p>
+  </div>
+  <p>Subscribe for more news</p>
+</div>
+<div>
+  <h1>Archives</h1>
+</div>
+
+CSS 
+
+#blog h1 {
+  color: blue;
+}
+
+La regla CSS seleccionará todos los elementos h1 que estén contenidos en el elemento con el ID blog.
+ La regla CSS no se aplicará al elemento h1 que contiene el texto Archivos.
+
+La estructura de un selector descendente es un selector CSS, seguido de un solo carácter de espacio, seguido de otro selector CSS.
+
+También se pueden seleccionar varios descendientes.
+ Por ejemplo, para seleccionar todos los elementos h1 que son descendientes de elementos div que son descendientes del elemento blog, el selector se especifica como sigue.
+
+CSS
+
+#blog div h1 {
+  color: blue;
+}
+
+Seleccionadores hijos
+Los selectores hijos son más específicos que los descendientes. 
+Solo seleccionan elementos que son descendientes inmediatos (hijos) de un selector (el padre).
+
+Por ejemplo, tiene la siguiente estructura HTML:
+
+HTML
+
+<div id="blog">
+  <h1>Latest News</h1>
+  <div>
+    <h1>Today's Weather</h1>
+    <p>The weather will be sunny</p>
+  </div>
+  <p>Subscribe for more news</p>
+</div>
+
+Si quiere dar estilo al elemento h1 que contiene el texto Últimas noticias, puede utilizar el siguiente selector hijo:
+
+CSS
+
+#blog > h1 {
+  color: blue;
+}
+
+Esto seleccionará el elemento con el ID blog (el padre), luego seleccionará todos los elementos h1 que están contenidos directamente en ese elemento (los hijos).
+ La estructura del selector hijo es un selector CSS seguido del símbolo combinador hijo > seguido de otro selector CSS.
+
+Tenga en cuenta que esto no irá más allá de un solo nivel de profundidad.
+ Por lo tanto, la regla CSS no se aplicará al elemento h1 que contiene el texto Today's Weather.
+
+:hover Pseudoclase
+Una palabra clave especial llamada pseudoclase permite a los desarrolladores seleccionar elementos en función de su estado.
+ Ahora no se preocupe demasiado por lo que significa. 
+ Por ahora, veamos cómo la pseudoclase hover permite estilizar un elemento cuando el cursor del mouse pasa por encima de este.
+
+El ejemplo más sencillo es cambiar el color de un hipervínculo cuando se le pasa el mouse por encima.
+Para ello, se añade la pseudoclase :hover al final del selector. 
+En el siguiente ejemplo, añadir :hover al elemento a cambiará el color del hipervínculo a naranja cuando se le pase el mouse por encima.
+
+CSS
+
+a:hover {
+  color: orange;
+}
+
+Esta pseudoclase es muy útil para crear efectos visuales basados en la interacción del usuario.
+

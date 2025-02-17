@@ -1,0 +1,198 @@
+Texto y color en CSS
+Al diseñar páginas web, trabajará mucho con colores y texto. Hay muchas formas diferentes de mostrar el texto y otras tantas de definir los colores.
+
+Esta lectura abarca cómo funcionan el texto y el color en CSS.
+
+Color
+Los colores se utilizan en muchas propiedades CSS, por ejemplo:
+
+p{
+    color: blue;
+}
+
+A partir de la versión 3 de CSS, hay cinco formas principales de hacer referencia a un color.
+
+Por valor RGB,
+
+por valor RGBA,
+
+por valor de HSL,
+
+por valor hexadecimal y
+
+por nombres de colores predefinidos.
+
+Valor RGB
+
+RGB es un modelo de color que suma los colores rojo (R), verde (G) y azul (B) para crear colores. Esto se basa en la forma en que el ojo humano ve los colores.
+
+Cada valor se define como un número entre 0 y 255, que representa la intensidad de ese color.
+
+Por ejemplo, el color rojo tendría el valor RGB de 255,0,0, ya que la intensidad del color rojo sería del 100% mientras que el azul y el verde serían del 0%.
+
+El color negro sería entonces 0,0,0 y el color blanco 255,255,255.
+
+Cuando se utilizan valores RGB en CSS, se pueden definir utilizando la palabra clave rgb:
+
+p{
+    color: rgb(255,0,0);
+}
+
+Valor RGBA
+
+RGBA es una extensión de RGB que añade un canal alfa (A). El canal alfa representa la opacidad, o transparencia, del color.
+
+Al igual que el RGB, se especifica en CSS mediante la palabra clave rgba:
+
+p{
+    color: rgba(255, 0, 0, 120);
+}
+
+Valor HSL
+
+HSL es un modelo de color más reciente definido como Tono (H), Saturación (S) y Luminosidad (L). El objetivo del modelo es simplificar la visualización mental del color que representa el valor.
+
+
+Piense en un arco iris que se ha convertido en un círculo completo. 
+Esto representa el Hue. El valor del Tono es el valor del grado en este círculo, desde 0 grados hasta 360 grados. El 0 es rojo, el 120 es verde y el 240 es azul.
+
+La saturación es la distancia desde el centro del círculo hasta su borde.
+ El valor de saturación está representado por un porcentaje del 0% al 100%, donde el 0% es el centro del círculo y el 100% es su borde.
+  Por ejemplo, 0% significará que el color es más gris y 100% representa el color completo.
+
+La luminosidad es el tercer elemento de este modelo de color.
+ Piensa que el círculo se convierte en un cilindro 3D donde la parte inferior del cilindro es más negra y hacia la parte superior es más blanca. 
+ Por lo tanto, la ligereza es la distancia desde el fondo del cilindro hasta la parte superior. 
+ De nuevo, la luminosidad se representa con un porcentaje del 0% al 100%, donde el 0% es la parte inferior del cilindro y el 100% es su parte superior. 
+ En otras palabras, 0% significará que el color es más negro y 100% es blanco.
+
+ En CSS, se utiliza la palabra clave hsl para definir un color con HSL.
+
+ p{
+    color: hsl(0, 100%, 50%);
+ }
+
+
+Valor hexadecimal
+
+Los colores se pueden especificar utilizando un valor hexadecimal. Si no está familiarizado con el hexadecimal, piense que es un conjunto de números diferente.
+
+El decimal es lo que se usa todos los días. Los dígitos van del 0 al 9 antes de utilizar las decenas y las centenas.
+
+El hexadecimal es similar, excepto que tiene 16 dígitos. Se cuenta como 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.
+
+De hecho, puede convertir entre decimal y hexadecimal. El 10 decimal es igual al A hexadecimal. El hexadecimal F es igual al decimal 15.
+
+El hexadecimal también puede ir a decenas y centenas. Por ejemplo, el decimal 16 es igual al hexadecimal 10, siendo el 10 el número siguiente a la F.
+
+Puede ser un poco confuso al principio, pero no se preocupe, hay muchos conversores disponibles si se queda atascado.
+
+Los colores especificados en hexadecimal llevan como prefijo el símbolo # seguido del valor RGB en formato hexadecimal.
+
+Por ejemplo, el color rojo que es RGB 255,0,0 se escribiría como hexadecimal #FF0000.
+
+De nuevo, no se preocupe si se queda atascado, ¡también hay muchos convertidores disponibles para esto!
+
+Nombres de colores predefinidos
+
+Los navegadores web modernos admiten 140 nombres de colores predefinidos. Estos nombres de colores son para fines de conveniencia y pueden ser asignados a valores hexagonales/RGB/HSL equivalentes.
+
+A continuación se enumeran algunos nombres de colores comunes disponibles.
+
+black
+silver
+gray
+white
+maroon
+red
+purple
+fuchsia
+green
+lime
+olive
+yellow
+navy
+blue
+teal
+aqua
+
+Texto
+Con CSS hay muchas maneras de cambiar la forma en que se muestra el texto. 
+En esta sección, aprenderá las propiedades CSS de manipulación de texto más comunes.
+
+Color del texto
+
+La propiedad color establece el color del texto. El siguiente CSS establece el color del texto para todos los elementos de párrafo en rojo.
+
+p{
+    color: red;
+}
+
+Fuente y tamaño del texto
+
+Existen muchos tipos de letra diferentes para mostrar el texto en el ordenador.
+ En términos sencillos, un tipo de letra es una colección de caracteres de texto escritos en un estilo y tamaño específicos.
+
+Si ya ha utilizado un procesador de textos, probablemente esté familiarizado con los tipos de letra Times New Roman y Calibri.
+
+Para establecer la fuente utilizada por el texto en CSS se utiliza la propiedad font-family.
+
+p{
+    font-family: "Courier New", monospace;
+}
+
+Dado que los ordenadores varían en cuanto a las fuentes que tienen instaladas, se recomienda incluir varias fuentes cuando se utilice la propiedad font-family.
+ Se especifican en un orden de retroceso, lo que significa que si la primera fuente no está disponible, se buscará la segunda. 
+ Si la segunda fuente no está disponible, entonces buscará la tercera fuente y así sucesivamente.
+  Si ninguna de las fuentes está disponible, utilizará la fuente por defecto del navegador.
+
+Para establecer el tamaño de la fuente, se utiliza la propiedad font-size.
+
+p { 
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+}
+
+Transformación del texto
+
+La transformación de texto es útil si se quiere asegurar la correcta capitalización del contenido del texto.
+En el ejemplo siguiente, la regla CSS cambiará todo el texto de los elementos de párrafo a mayúsculas utilizando la propiedad text-transform:
+
+p{
+    text-transform: uppercase;
+}
+
+Los valores más utilizados para la propiedad text-transform son: mayúsculas, minúsculas, mayúscula inicial y ninguno.
+ El valor por defecto utilizado es ninguno, lo que significa que el texto se muestra tal y como fue escrito en el documento HTML.
+
+Decoración de textos
+
+La propiedad text-decoration es útil para aplicar una decoración adicional al texto, como el subrayado y el tachado.
+
+p { 
+  text-decoration: underline;
+}
+
+También es posible establecer el color, el grosor y el estilo de la decoración.
+En el ejemplo siguiente, el subrayado será una línea roja sólida de 5 píxeles de grosor.
+
+p { 
+  text-decoration: underline red solid 5px;
+}
+
+Si esto le resulta confuso, no se preocupe.
+Estas propiedades pueden establecerse individualmente mediante las propiedades text-decoration-line, text-decoration-color, text-decoration-style y text-decoration-thickness.
+Volvamos a utilizar el mismo ejemplo y definámoslo utilizando las propiedades individuales:
+
+p { 
+  text-decoration-line: underline;
+  text-decoration-color: red;
+  text-decoration-style: solid;
+  text-decoration-thickness: 5px;
+}
+
+Los valores más comunes de text-decoration-line que se utilizan son: subrayado, sobrelínea, línea de paso y ninguno. 
+Ninguno es el valor por defecto para no utilizar ninguna decoración de texto.
+
+Hay muchos estilos disponibles para la propiedad text-decoration-style; sólido, doble, punteado, discontinuo y ondulado.
+ La propiedad text-decoration-style requiere que se defina la línea de decoración. Si no se especifica el estilo de decoración, se utilizará el sólido.
